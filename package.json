@@ -1,0 +1,54 @@
+{
+  "name": "material-app",
+  "version": "1.2.0",
+  "description": "Material App Pro - React Admin & Dashboard Template",
+  "author": "lambdas-crew",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "lint": "eslint '*/**/*.{js,ts,tsx}'",
+    "lint:fix": "eslint '*/**/*.{js,ts,tsx}' --fix"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 10",
+    "not op_mini all"
+  ],
+  "dependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "16.9.8",
+    "@types/react-helmet": "5.0.16",
+    "@types/react-router-dom": "^5.1.6",
+    "react": "16.13.1",
+    "react-app-polyfill": "1.0.6",
+    "react-beautiful-dnd": "^13.0.0",
+    "react-dom": "16.13.1",
+    "react-helmet": "5.2.1",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "3.4.3",
+    "styled-components": "5.1.1",
+    "typescript": "3.9.7"
+  },
+  "devDependencies": {
+    "@types/react-beautiful-dnd": "^13.0.0",
+    "@typescript-eslint/eslint-plugin": "^3.10.1",
+    "@typescript-eslint/parser": "^3.10.1",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.13",
+    "prettier": "^2.1.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "npm run lint:fix"
+    ]
+  }
+}
