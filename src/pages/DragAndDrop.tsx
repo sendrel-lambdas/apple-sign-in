@@ -67,7 +67,7 @@ const formArea: ItemType[] = [
 ];
 
 const DragAndDrop = () => {
-  const [characters, updateCharacters] = useState(finalSpaceCharacters);
+  const [characters] = useState(finalSpaceCharacters);
   const [secondSet, setSecondSet] = useState(formArea);
 
   function handleOnDragEnd(result: DropResult) {
