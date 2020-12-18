@@ -21,6 +21,7 @@ scriptjs.get('https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_
 
 const SignIn: React.FC = () => {
   const handleAppleSignInSuccess = async (data: any) => {
+    console.log('yooo');
     console.log(data);
   };
   const handleAppleSignInFailure = (error: any) => {
@@ -30,12 +31,13 @@ const SignIn: React.FC = () => {
   useEffect(() => {
     window.addEventListener('AppleIDSignInOnSuccess', handleAppleSignInSuccess);
     window.addEventListener('AppleIDSignInOnFailure', handleAppleSignInFailure);
-
+    console.log('here');
     return () => {
+      console.log('yo');
       window.removeEventListener('AppleIDSignInOnSuccess', handleAppleSignInSuccess);
       window.addEventListener('AppleIDSignInOnFailure', handleAppleSignInFailure);
     };
-  }, []);
+  });
   return (
     <React.Fragment>
       <div
