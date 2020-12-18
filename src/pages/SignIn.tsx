@@ -40,7 +40,7 @@ const SignIn: React.FC = () => {
       document.addEventListener('AppleIDSignInOnFailure', handleAppleSignInFailure);
     };
   });
-  if (appleData) {
+  if (appleData && appleData.user) {
     return <Success userData={appleData} />;
   }
   return (
