@@ -6,7 +6,7 @@ const SignIn: React.FC = () => {
   const handleCallback = (e: any) => {
     console.log(e);
   };
-  return <AppleLogin clientId={clientId} redirectURI={redirectURI} callback={handleCallback} />;
+  return <AppleLogin clientId={clientId} redirectURI={redirectURI} callback={handleCallback} scope="name email" />;
 };
 
 export default SignIn;
