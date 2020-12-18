@@ -24,6 +24,7 @@
     "@types/react-dom": "16.9.8",
     "@types/react-helmet": "5.0.16",
     "@types/react-router-dom": "^5.1.6",
+    "@types/scriptjs": "^0.0.2",
     "react": "16.13.1",
     "react-app-polyfill": "1.0.6",
     "react-apple-login": "^1.1.2",
@@ -32,6 +33,7 @@
     "react-helmet": "5.2.1",
     "react-router-dom": "5.2.0",
     "react-scripts": "3.4.3",
+    "scriptjs": "^2.5.9",
     "styled-components": "5.1.1",
     "typescript": "3.9.7"
   },
