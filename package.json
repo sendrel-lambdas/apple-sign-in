@@ -28,6 +28,7 @@
     "react": "16.13.1",
     "react-app-polyfill": "1.0.6",
     "react-apple-login": "^1.1.2",
+    "react-apple-signin-auth": "^0.0.6",
     "react-beautiful-dnd": "^13.0.0",
     "react-dom": "16.13.1",
     "react-helmet": "5.2.1",

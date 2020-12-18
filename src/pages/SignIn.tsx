@@ -29,13 +29,13 @@ const SignIn: React.FC = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('AppleIDSignInOnSuccess', handleAppleSignInSuccess);
-    window.addEventListener('AppleIDSignInOnFailure', handleAppleSignInFailure);
+    document.addEventListener('AppleIDSignInOnSuccess', handleAppleSignInSuccess);
+    document.addEventListener('AppleIDSignInOnFailure', handleAppleSignInFailure);
     console.log('here');
     return () => {
       console.log('yo');
-      window.removeEventListener('AppleIDSignInOnSuccess', handleAppleSignInSuccess);
-      window.addEventListener('AppleIDSignInOnFailure', handleAppleSignInFailure);
+      document.removeEventListener('AppleIDSignInOnSuccess', handleAppleSignInSuccess);
+      document.addEventListener('AppleIDSignInOnFailure', handleAppleSignInFailure);
     };
   });
   return (
