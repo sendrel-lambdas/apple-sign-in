@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import * as scriptjs from 'scriptjs';
 const clientId = process.env.REACT_APP_APPLE_CLIENT_ID as string;
 
