@@ -1,9 +1,8 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import * as scriptjs from 'scriptjs';
 const clientId = process.env.REACT_APP_APPLE_CLIENT_ID as string;
-const redirectURI = process.env.REACT_APP_APPLE_REDIRECT_URI as string;
 
+const redirectURI = process.env.REACT_APP_APPLE_REDIRECT_URI as string;
 declare global {
   interface Window {
     AppleID: any;
@@ -12,17 +11,23 @@ declare global {
 
 scriptjs.get('https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js', () => {
   const params = {
-    clientId: process.env.REACT_APP_APPLE_CLIENT_ID,
-    redirectURI: process.env.REACT_APP_APPLE_REDIRECT_URI,
+    clientId,
+    redirectURI,
     scope: 'name email',
+    usePopup: true,
   };
-  //
   window.AppleID.auth.init(params);
 });
 const SignIn: React.FC = () => {
   return (
     <React.Fragment>
-      <button onClick={() => window.AppleID.auth.signIn()} />
+      <div
+        id="appleid-signin"
+        data-color="black"
+        data-border="true"
+        data-type="sign in"
+        style={{ width: '210px', height: '40px' }}
+      ></div>
     </React.Fragment>
   );
 };
