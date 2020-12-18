@@ -1,5 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Redirect } from 'react-router';
 import * as scriptjs from 'scriptjs';
+import Success from './Success';
 const clientId = process.env.REACT_APP_APPLE_CLIENT_ID as string;
 
 const redirectURI = process.env.REACT_APP_APPLE_REDIRECT_URI as string;
@@ -20,8 +22,9 @@ scriptjs.get('https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_
 });
 
 const SignIn: React.FC = () => {
+  const [appleData, setAppleData] = useState<null | any>(null);
   const handleAppleSignInSuccess = async (data: any) => {
-    console.log('yooo');
+    setAppleData(data.detail);
     console.log(data);
   };
   const handleAppleSignInFailure = (error: any) => {
@@ -38,6 +41,9 @@ const SignIn: React.FC = () => {
       document.addEventListener('AppleIDSignInOnFailure', handleAppleSignInFailure);
     };
   });
+  if (appleData) {
+    return <Success userData={appleData} />;
+  }
   return (
     <React.Fragment>
       <div
