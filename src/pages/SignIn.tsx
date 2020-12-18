@@ -35,7 +35,7 @@ const SignIn: React.FC = () => {
       window.removeEventListener('AppleIDSignInOnSuccess', handleAppleSignInSuccess);
       window.addEventListener('AppleIDSignInOnFailure', handleAppleSignInFailure);
     };
-  });
+  }, []);
   return (
     <React.Fragment>
       <div
