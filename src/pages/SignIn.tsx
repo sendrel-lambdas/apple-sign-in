@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import * as scriptjs from 'scriptjs';
 const clientId = process.env.REACT_APP_APPLE_CLIENT_ID as string;
 
@@ -18,7 +18,24 @@ scriptjs.get('https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_
   };
   window.AppleID.auth.init(params);
 });
+
 const SignIn: React.FC = () => {
+  const handleAppleSignInSuccess = async (data: any) => {
+    console.log(data);
+  };
+  const handleAppleSignInFailure = (error: any) => {
+    console.log(error);
+  };
+
+  useEffect(() => {
+    window.addEventListener('AppleIDSignInOnSuccess', handleAppleSignInSuccess);
+    window.addEventListener('AppleIDSignInOnFailure', handleAppleSignInFailure);
+
+    return () => {
+      window.removeEventListener('AppleIDSignInOnSuccess', handleAppleSignInSuccess);
+      window.addEventListener('AppleIDSignInOnFailure', handleAppleSignInFailure);
+    };
+  });
   return (
     <React.Fragment>
       <div
