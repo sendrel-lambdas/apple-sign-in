@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Redirect } from 'react-router';
 import * as scriptjs from 'scriptjs';
 import Success from './Success';
 const clientId = process.env.REACT_APP_APPLE_CLIENT_ID as string;
